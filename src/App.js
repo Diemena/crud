@@ -9,7 +9,7 @@ function App() {
   const addTask = (e) => {
     e.preventDefault()
     if (isEmpty(task)){
-    console.log("task empty")
+    console.log("Task empty")
     return
     }
 
@@ -19,7 +19,7 @@ function App() {
 
     }
 
-    setTask([ ...tasks, newTask ])
+    setTasks([ ...tasks, newTask ])
     setTask("")
   }
 
@@ -33,12 +33,12 @@ function App() {
        <ul className="list-group">
 
         {
-          task.map((task) => (
-          <li className="list-group-item" key= {task.id}> 
+          tasks.map((task) => (
+          <li className="list-group-item" key= {task.id}>
            <span span className="lead">{task.name}</span>
             <button className="btn btn-danger btn-sm float-right mx-2">Eliminar</button>
             <button className="btn btn-warning btn-sm float-right">Editar</button>
-       </li>
+          </li>
 
         ))
        }
